@@ -14,10 +14,16 @@
  * doesArrayIncludeItemsBetweenVals([2, 4, 2], 5, 10) => false
  */
 
-// Your code goes here...
-
-
-
+// Named function syntax
+function doesArrayIncludeItemsBetweenVals(arr, val1, val2) {
+  if (!Array.isArray(arr) || arr.length === 0) return false;
+  for (let item of arr) {
+    if (item > val1 && item < val2) {
+      return true; // Early return if condition is met
+    }
+  }
+  return false; // Default return if no item meets the condition
+}
 
 /**
  * ====================================================
@@ -34,16 +40,34 @@
  * getValueWithConditionOne(20, 30) => 100;
  */
 
-// Your code goes here...
+// Named function syntax
+function getValueWithConditionOne(num1, num2) {
+  if (num1 === 40 && num2 === 40) {
+    return num1 + num2;
+  }
+  return (num1 + num2) * 2;
+}
 
+// Arrow function syntax
+const getValueWithConditionTwo = (num1, num2) => {
+  if (num1 === 40 && num2 === 40) {
+    return num1 + num2;
+  }
+  return (num1 + num2) * 2;
+}
 
-
+// Function expression with anonymous function
+const getValueWithConditionThree = function(num1, num2) {
+  if (num1 === 40 && num2 === 40) {
+    return num1 + num2;
+  }
+  return (num1 + num2) * 2;
+}
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-3"
 // If the test has all tests passed, switch to the next exercise file
 // If any of the tests fails, refactor the code and run the test command after you've fixed the function
-
 
 // Do not delete or change the lines beneath
 const f = {
